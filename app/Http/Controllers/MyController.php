@@ -54,13 +54,13 @@ class MyController extends Controller
 
     public function param($id)
     {
-        @if($id=='binatang')
-        $binatang = ['Sapi','Monyet','Ikan Tuna','Belalang','Burung Kakatua'];
-        @endif
-        $komputer = ['Asus','Dell','Toshiba','Samsung','Acer','Axioo','Hp'];
-        $buah = ['Mangga','Jeruk','Apel','Anggur','Melon','Manggis'];
-        return view('latihan.all',compact('binatang','buah','komputer'));
-         return view('latihan.all', ['all' => all::findOrFail($id)]);
+        $campur = ['binatang'=>['Sapi','Monyet','Ikan Tuna','Belalang','Burung Kakatua'],
+                    'komputer'=>['Asus','Dell','Toshiba','Samsung','Acer','Axioo','Hp'],
+                    'buah'=>['Mangga','Jeruk','Apel','Anggur','Melon','Manggis']];
+        $data=$campur[$id];
+        return view('all',compact('data'));
 
     }
+
+  
 }

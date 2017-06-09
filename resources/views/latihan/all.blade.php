@@ -26,7 +26,7 @@
 <h3>Binatang</h3>
   <table border="1">
    <tr>
-   @foreach($binatang as $data)
+   @foreach($binatang as $id)
     <td>{{$data}}</td>
    @endforeach
    </tr>
